@@ -12,7 +12,7 @@ public class Sistema {
 		usuarios= new ArrayList<Usuario>();
 	}
 
-	public Boolean agregarUsuario(Usuario usuario) {
+	public Boolean registrarUsuario(Usuario usuario) {
 		Boolean exito = null;
 		if(usuarios.contains(usuario)){
 			exito=false;
@@ -47,5 +47,18 @@ public class Sistema {
 	public void setUsuarios(ArrayList<Usuario> usuarios) {
 		this.usuarios = usuarios;
 	}
+
+	public int  cantidadDeUsuariosLogeados() {
+		Integer cantidadUsuariosLogeados = 0;
+		for (Usuario usuario : usuarios) {
+			if(usuario.getEstaLogeado() == true) {
+				cantidadUsuariosLogeados++;
+			}
+		}
+		return cantidadUsuariosLogeados;
+	}
+	
+
+	
 
 }
